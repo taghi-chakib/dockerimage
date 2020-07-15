@@ -3,19 +3,21 @@ node {
 
     stage('clone') {
         checkout scm
-    
     }
+   
     stage('build image') {
         app = docker.build("chakib/nginx")
-    
     }
+   
     stage('run image') {
-    	docker.image('chakib/nginx').withRun(' -p 80:80') { c ->
-
+    	docker.image('chakib/nginx').withRun('-p 80:80') { c ->
+         
         sh 'docker ps'
+         
         sh 'curl localhost'
 
     
     }
+       
     }
 }
