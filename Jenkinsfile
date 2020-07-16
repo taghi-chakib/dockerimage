@@ -1,7 +1,7 @@
 node {
    
     stage('clone') {
-        checkout scm
+        git 'https://github.com/taghi-chakib/dockerimage.git'
     }
    
     stage('build image') {
