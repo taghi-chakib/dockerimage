@@ -8,7 +8,7 @@ node {
          sh 'docker build -t chakib/nginx .'
     }
     stage('run image') {
-         sh 'docker run -d chakib/nginx --name mynginx -p 8081:8081  '
+         sh 'docker run -tid -p 8081:80 --name mynginx  chakib/nginx'
          sh 'docker ps'
     }
 }
