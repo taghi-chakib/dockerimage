@@ -9,7 +9,7 @@ node {
     }
     stage('run image') {
          sh 'docker run -tid -p 8081:80 --name mynginx  chakib/nginx'
-         sh 'docker exec -ti mynginx bash && curl localhost '
+         sh 'docker exec -t mynginx sh -c 'curl localhost''
          sh 'docker ps'
     }
 }
