@@ -5,7 +5,7 @@ node {
     }
    
     stage('build image') {
-         sh 'docker build -t chakib/nginx:latest .'
+         sh 'docker build -t chakib/nginx .'
     }
    
 }
